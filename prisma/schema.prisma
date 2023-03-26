@@ -1,7 +1,8 @@
 // schema.prisma
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
@@ -9,8 +10,8 @@ generator client {
 }
 
 model User {
-  code    String  @id
-  replied Boolean @default(false)
+  code    String   @id
+  replied Boolean  @default(false)
   monthly Boolean
   max_bid Int
   bid     Int?
