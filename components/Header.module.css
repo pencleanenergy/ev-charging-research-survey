@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 20vw;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 0.25rem solid transparent;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+}
+
+.link:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}

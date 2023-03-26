@@ -1,0 +1,18 @@
+// schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  code    String  @id
+  replied Boolean @default(false)
+  monthly Boolean
+  max_bid Int
+  bid     Int?
+  binding Boolean?
+}
