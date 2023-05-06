@@ -6,7 +6,7 @@ export default function Page0({
   setMonthly,
   setMaxBid,
 }) {
-  let prompt = <label htmlFor="code">Please enter your survey code</label>;
+  let prompt = <label htmlFor="code">Please enter your offer code</label>;
 
   const handleCodeSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +53,7 @@ export default function Page0({
   };
   return (
     <>
-      <h1>Survey Question</h1>
+      <h1>Welcome to the PCE EV Charging Program</h1>
       <form onSubmit={handleCodeSubmit} className={styles.form}>
         <p>{prompt}</p>
         <p>

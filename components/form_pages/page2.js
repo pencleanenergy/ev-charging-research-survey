@@ -12,7 +12,7 @@ export default function Page2({ setPage, setValue, setBidIncrement, monthly }) {
   };
   let prompt = (
     <>
-      <div>Would you participate in the program for:</div>
+      <div>Would you interested in enrolling in the PCE EV managed charging program</div>
       <p>
         <b>no payment</b>?
       </p>
