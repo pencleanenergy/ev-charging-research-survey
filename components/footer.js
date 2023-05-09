@@ -5,7 +5,7 @@ export default function Footer() {
     <>
       <footer className={styles.footer}>
         <p>
-          Proof of concept for PCE electrical vehicle charging program by Aaron Bushnell.
+          Penninsula Clean Energy EV Charging Participation Survey.
         </p>
       </footer>
     </>

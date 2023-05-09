@@ -5,7 +5,7 @@ export default function Header() {
     <>
       <header className={styles.header}>
         <div className={styles.navbar}>
-          <h3>Survey Concept</h3>
+          <h3>PCE EV Charging Program</h3>
           <nav>
             <a aria-current="page" href="#" className={styles.link}>
               Survey
