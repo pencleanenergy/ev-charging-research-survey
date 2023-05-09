@@ -10,18 +10,15 @@ export default function Page2({ setPage, setValue, setBidIncrement, monthly }) {
     setValue(value);
     setBidIncrement(1);
   };
-  let prompt = (
-    <>
-      <div>Would you interested in enrolling in the PCE EV managed charging program</div>
-      <p>
-        <b>no payment</b>?
-      </p>
-    </>
-  );
   return (
     <>
       <h1>Survey Question</h1>
-      {prompt}
+      <div>
+        Would you interested in enrolling in the PCE EV managed charging program
+      </div>
+      <p>
+        <b>no payment</b>?
+      </p>
       <div className={styles.buttonrow}>
         <button
           type="button"

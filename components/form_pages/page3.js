@@ -31,18 +31,13 @@ export default function Page3({
     setBidIncrement(bidIncrement + 1);
     setPage(3);
   };
-  let prompt = (
+  return (
     <>
+      <h1>Survey Question</h1>
       <div>Would you participate in the program for:</div>
       <p>
         a <b>${value}</b> {monthly ? "monthly payment" : "one-time payment"}?
       </p>
-    </>
-  );
-  return (
-    <>
-      <h1>Survey Question</h1>
-      {prompt}
       <div className={styles.buttonrow}>
         <button
           type="button"
