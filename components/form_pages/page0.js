@@ -53,13 +53,25 @@ export default function Page0({
   };
   return (
     <>
-      <h1>Welcome to the PCE EV Charging Program</h1>
+      <div className={styles.banner}>
+        <h1 className={styles.p_container}>
+        Welcome to the PCE EV Charging Program
+        </h1>
+      </div>
       <form onSubmit={handleCodeSubmit} className={styles.form}>
         <p>{prompt}</p>
         <p>
-          <input type="text" name="code" id="code" required className={styles.input}/>
+          <input
+            type="text"
+            name="code"
+            id="code"
+            required
+            className={styles.input}
+          />
         </p>
-        <button type="submit" className={styles.button}>Submit</button>
+        <button type="submit" className={styles.button}>
+          Submit
+        </button>
       </form>
     </>
   );
