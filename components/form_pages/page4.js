@@ -52,6 +52,8 @@ export default function Page4({
   const handleBidSubmit = async (e) => {
     e.preventDefault();
 
+    // let input = document.getElementsByClassName(styles.input)[0];
+
     const inputBid = e.target.bid.value;
     if (inputBid > value && !upperBound) {
       let result = window.confirm(
@@ -64,9 +66,7 @@ export default function Page4({
     }
     if (inputBid < prevValue) {
       let result = window.confirm(
-        `This bid is less than $${
-          prevValue
-        }. Are you sure you want to make this bid?`
+        `This bid is less than $${prevValue}. Are you sure you want to make this bid?`
       );
       if (!result) {
         setPage(4);
@@ -100,17 +100,27 @@ export default function Page4({
     setBid(inputBid);
     setPage(5);
   };
+
+  const handleCodeChange = async (e) => {
+    let bid = document.getElementsByClassName(styles.input)[0].value;
+    let container = document.getElementById("container");
+    let offset = (165 - bid.length * 7).toString() + "px";
+    container.style.setProperty("--offset", offset);
+  };
   return (
     <>
       <h1>Survey Question</h1>
       <form onSubmit={handleBidSubmit} className={styles.form}>
         {prompt}
-        <p>
+        <p id="container" className={styles.container}>
           <input
             type="number"
             name="bid"
             id="bid"
             required
+            autoComplete="off"
+            onChange={handleCodeChange}
+            onClick={handleCodeChange}
             className={styles.input}
           />
         </p>

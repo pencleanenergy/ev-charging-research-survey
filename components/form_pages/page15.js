@@ -9,7 +9,11 @@ export default function Page1({ setPage, monthly }) {
   };
   return (
     <>
-      <h1>Managed EV Charging Incentive Payments</h1>
+      <div className={styles.banner}>
+        <h1 className={styles.p_container}>
+        Managed EV Charging Incentive Payments
+        </h1>
+      </div>
       <p className={styles.p_container}>
       PCE will make available incentive payments for participants in the managed charging program.  
       If you are enrolled in the program we will provide you with a {monthly ? "monthly payment" : "one-time payment"} that
