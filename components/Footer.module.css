@@ -1,5 +1,162 @@
 .footer {
-    color: #8c8c8c;
+    position: relative;
+    background-color: #3A5DAE;
+}
+
+.footer_row {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: flex;
+    max-width: 1140px;
+    padding: 25px 0px 0px 0px;
+}
+
+.footer_row_2 {
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    max-width: 1140px;
+    padding: 25px 0px 0px 0px;
+}
+
+.footer_row_3 {
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    max-width: 1140px;
+    padding: 1em 0em 1em 0em;
+}
+
+.footer_col_1 {
+    width: 20.443%;
+}
+
+.footer_col_2 {
+    width: 27.661%;
+}
+
+.footer_col_3 {
+    width: 30.438%;
+}
+
+.footer_col_4 {
+    width: 21.457%;
+}
+
+.footer_col_5 {
+    width: 78.503%;
+}
+
+.footer_col_6 {
+    width: 21.457%;
+}
+
+.footer_col_7 {
+    width: 25%;
+}
+
+.footer_col_8 {
+    width: 43.143%;
+}
+
+.footer_col_9 {
+    width: 10.348%;
+}
+
+.footer_col_10 {
+    width: 21.457%;
+}
+
+.footer_col_container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.footer_col_links {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link_header {
+    margin: 0px 0px 20px 0px;
+    font-weight: 700;
+    font-size: 22px;
+    color: #E0F000;
+    text-transform: uppercase;
+}
+
+.link {
+    margin-top: calc(15px/2);
+    padding-bottom: calc(15px/2);
+    line-height: 24px;
+    display: inline-block;
+}
+
+.link a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.link_text {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    padding-left: 5px;
+    align-self: center;
+    display: inline-block;
+}
+
+.footer_logo img {
+    width: 100px;
+    height: auto;
+}
+
+.footer_text {
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+}
+
+.footer_text_left {
+    color: #fff;
+    text-align: left;
+    font-weight: 300;
+}
+
+.footer_text p {
+    margin-bottom: 26.4px;
+    margin-top: 0;
+}
+
+.footer_text_subscribe {
+    text-align: center;
+}
+
+.footer_text_subscribe span {
+    color: #3A5DAE;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer_text_subscribe a {
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: #fff;
+}
+
+.arrow {
+    height: 1em;
+    width: 1em;
+    color: #3A5DAE;
+    fill: #3A5DAE;
 }

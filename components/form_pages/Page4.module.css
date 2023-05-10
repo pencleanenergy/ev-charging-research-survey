@@ -12,8 +12,17 @@
   font-weight: 700;
   border-radius: 10px;
   padding: 10px;
-  border-style: none;
+  border-style: solid;
   transition-duration: 0.2s;
+  font-size: 24px;
+}
+
+.container:before {
+  content: "$";
+  text-align: center;
+  position: relative;
+  left: var(--offset);
+  font-size: 26px;
 }
 
 .input:focus-visible {
@@ -21,18 +30,38 @@
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
 }
 
+.input:focus {
+  border: 3px solid #3a5dae;
+}
+
 .button {
   border-radius: 10px;
   padding: 10px;
   font-weight: 700;
-  background-color: #fff;
+  background-color: #3a5dae;
+  color: #fff;
   border-style: none;
   transition-duration: 0.4s;
+  font-size: 24px;
 }
 
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-  color: #fff;
+  /* background-color: #e3f4ff;
+  color: #343434; */
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  font-weight: 800;
+}
+
+.banner {
+  background: #004fa6;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.p_container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
 }

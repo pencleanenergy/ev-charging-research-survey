@@ -33,7 +33,9 @@ export default function Page3({
   };
   return (
     <>
-      <h1>Survey Question</h1>
+      <div className={styles.banner}>
+        <h1 className={styles.p_container}>**Survey Question**</h1>
+      </div>
       <div>Would you participate in the program for:</div>
       <p>
         a <b>${value}</b> {monthly ? "monthly payment" : "one-time payment"}?

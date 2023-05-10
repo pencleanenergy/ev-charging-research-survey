@@ -12,9 +12,14 @@ export default function Page2({ setPage, setValue, setBidIncrement, monthly }) {
   };
   return (
     <>
-      <h1>Survey Question</h1>
-      <div>
-        Would you interested in enrolling in the PCE EV managed charging program
+      <div className={styles.banner}>
+        <h1 className={styles.p_container}>
+        ***Survey Question***
+        </h1>
+      </div>
+      <h1></h1>
+      <div className={styles.p_container}>
+        Would you be interested in enrolling in the PCE EV managed charging program
       </div>
       <p>
         <b>no payment</b>?

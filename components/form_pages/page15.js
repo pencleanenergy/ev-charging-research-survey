@@ -9,13 +9,17 @@ export default function Page1({ setPage, monthly }) {
   };
   return (
     <>
-      <h1>Managed EV Charging Incentive Payments</h1>
-      <p>
+      <div className={styles.banner}>
+        <h1 className={styles.p_container}>
+        Managed EV Charging Incentive Payments
+        </h1>
+      </div>
+      <p className={styles.p_container}>
       PCE will make available incentive payments for participants in the managed charging program.  
       If you are enrolled in the program we will provide you with a {monthly ? "monthly payment" : "one-time payment"} that
       is determined based upon our available budget for this pilot.  Your survey answers <b>will not</b> influence the size of your incentive payment.
       </p>
-      <p>
+      <p className={styles.p_container}>
       The survey will ask you if you would be willing to particpate in our pilot for a given level of incentive payment. If
       you are willing to participate for a payment that is less than or equal to our budgeted incentive payment, you will be 
       enrolled in the program and receive our {monthly ? "monthly" : "one-time"} incentive payment.  If your survey indicates that you would only participate for
