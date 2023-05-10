@@ -1,4 +1,5 @@
 import styles from "./Page4.module.css";
+import { useState } from "react";
 
 export default function Page4({
   setPage,
@@ -12,6 +13,10 @@ export default function Page4({
   upperBound,
   monthly,
 }) {
+
+  const [approved, setApproved] = useState(false);
+  const [prevBid, setPrevBid] = useState(0);
+
   let prompt;
   if (upperBound) {
     prompt = (
@@ -53,26 +58,50 @@ export default function Page4({
     e.preventDefault();
 
     // let input = document.getElementsByClassName(styles.input)[0];
+    let input = document.getElementsByClassName(styles.input)[0];
+    let prompt = document.getElementById("prompt");
+    let button = document.getElementsByClassName(styles.button)[0];
+
+    input.style.border = "5px solid #3a5dae";
+
 
     const inputBid = e.target.bid.value;
-    if (inputBid > value && !upperBound) {
-      let result = window.confirm(
-        `This bid is higher than $${value}. Are you sure you want to make this bid?`
-      );
-      if (!result) {
-        setPage(4);
-        return;
-      }
+    if (inputBid > value && !upperBound && (!approved || prevBid !== inputBid)) {
+      // let result = window.confirm(
+      //   `This bid is higher than $${value}. Are you sure you want to make this bid?`
+      // );
+      // if (!result) {
+      //   setPage(4);
+      //   return;
+      // }
+      input.style.border = "5px solid yellow";
+      prompt.innerHTML = `Your bid of <b>$${inputBid}</b> is higher than <b>$${value}</b>. <p>Are you sure you want to make this bid?</p>`;
+      setPage(4);
+      setApproved(true);
+      setPrevBid(inputBid);
+      button.innerHTML = "Confirm";
+      return;
     }
-    if (inputBid < prevValue) {
-      let result = window.confirm(
-        `This bid is less than $${prevValue}. Are you sure you want to make this bid?`
-      );
-      if (!result) {
-        setPage(4);
-        return;
-      }
+    if (inputBid < prevValue && (!approved || prevBid !== inputBid)) {
+      // let result = window.confirm(
+      //   `This bid is less than $${prevValue}. Are you sure you want to make this bid?`
+      // );
+      // if (!result) {
+      //   setPage(4);
+      //   return;
+      // }
+      input.style.border = "5px solid yellow";
+      prompt.innerHTML = `Your bid of <b>$${inputBid}</b> is less than <b>$${prevValue}</b>. <p>Are you sure you want to make this bid?</p>`;
+      setPage(4);
+      setApproved(true);
+      setPrevBid(inputBid);
+      button.innerHTML = "Confirm";
+      return;
     }
+
+    button.style.backgroundColor = "#fff";
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
     if (inputBid < maxBid) {
       setBinding(true);
     }
@@ -103,13 +132,30 @@ export default function Page4({
 
   const handleCodeChange = async (e) => {
     let bid = document.getElementsByClassName(styles.input)[0].value;
+    let prompt = document.getElementById("prompt");
     let container = document.getElementById("container");
     let offset = (165 - bid.length * 7).toString() + "px";
     container.style.setProperty("--offset", offset);
+
+    let inputBid = parseInt(bid);
+    console.log(inputBid);
+    let input = document.getElementsByClassName(styles.input)[0];
+
+    if (inputBid < value && inputBid > prevValue) {
+      console.log("blue");
+      input.style.border = "3px solid #3a5dae";
+      prompt.innerHTML = "";
+    } else if (bid === "") {
+      console.log("NaN");
+      input.style.border = "3px solid #3a5dae";
+      prompt.innerHTML = "";
+    }
   };
   return (
     <>
-      <h1>Survey Question</h1>
+      <div className={styles.banner}>
+        <h1 className={styles.p_container}>***Survey Question***</h1>
+      </div>
       <form onSubmit={handleBidSubmit} className={styles.form}>
         {prompt}
         <p id="container" className={styles.container}>
@@ -124,6 +170,7 @@ export default function Page4({
             className={styles.input}
           />
         </p>
+        <div id="prompt" className={styles.prompt}></div>
         <button type="submit" className={styles.button}>
           Submit
         </button>

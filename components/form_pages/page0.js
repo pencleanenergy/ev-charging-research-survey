@@ -27,12 +27,15 @@ export default function Page0({
     let input = document.getElementsByClassName(styles.input)[0];
     let prompt = document.getElementById("prompt");
 
+    input.style.border = "5px solid #3a5dae";
+
     const response = await fetch(endpoint, options);
     if (response.status == 400) {
       // alert("Code not found");
       prompt.innerHTML = "NO!!!! NOT FOUND";
       // input.value = "";
-      input.style.border = "3px solid red";
+      input.style.border = "5px solid red";
+      
       return;
     }
     const result = await response.json();
@@ -45,10 +48,10 @@ export default function Page0({
     if (result.replied) {
       // alert("You have already replied to this survey");
       prompt.innerHTML = "NO!!!! ALREADY REPLIED";
-      input.style.border = "3px solid red";
+      input.style.border = "5px solid red";
       return;
     } else {
-      input.style.border = "3px solid green";
+      input.style.border = "5px solid green";
       prompt.innerHTML = "YES!!!!";
       await new Promise(resolve => setTimeout(resolve, 1000));
       setPage(1);
