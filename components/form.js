@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Page0 from "./form_pages/page0";
 import Page1 from "./form_pages/page1";
-import Page15 from "./form_pages/page15";
 import Page2 from "./form_pages/page2";
 import Page3 from "./form_pages/page3";
 import Page4 from "./form_pages/page4";
@@ -33,10 +32,7 @@ export default function Form() {
       );
     case 1:
       // Survey Info
-      return <Page1 setPage={setPage} />;
-    case 15:
-      // Survey Info
-      return <Page15 
+      return <Page1
       		setPage={setPage} 
       		monthly={monthly} />;  
     case 2:
