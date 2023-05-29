@@ -56,7 +56,7 @@ export default function Page0({
     } else {
       input.style.border = "5px solid green";
       promptTop.innerHTML = "Code confirmed!";
-      promptBottom.innerHTML = "Please wait...";
+      promptBottom.innerHTML = "";
       await new Promise(resolve => setTimeout(resolve, 1000));
       setPage(1);
     }
