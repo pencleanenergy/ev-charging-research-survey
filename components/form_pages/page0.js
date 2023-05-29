@@ -25,14 +25,16 @@ export default function Page0({
     };
 
     let input = document.getElementsByClassName(styles.input)[0];
-    let prompt = document.getElementById("prompt");
+    let promptTop = document.getElementById("prompt-top");
+    let promptBottom = document.getElementById("prompt-bottom");
 
     input.style.border = "5px solid #3a5dae";
 
     const response = await fetch(endpoint, options);
     if (response.status == 400) {
       // alert("Code not found");
-      prompt.innerHTML = "NO!!!! NOT FOUND";
+      promptTop.innerHTML = "Oops! Code not found.";
+      promptBottom.innerHTML = "Please verify the code you recieved and try again.";
       // input.value = "";
       input.style.border = "5px solid red";
       
@@ -47,12 +49,14 @@ export default function Page0({
 
     if (result.replied) {
       // alert("You have already replied to this survey");
-      prompt.innerHTML = "NO!!!! ALREADY REPLIED";
+      promptTop.innerHTML = "Oops! It looks like you have already replied to this survey.";
+      promptBottom.innerHTML = "If you have not, please verify the code you recieved and try again.";
       input.style.border = "5px solid red";
       return;
     } else {
       input.style.border = "5px solid green";
-      prompt.innerHTML = "YES!!!!";
+      promptTop.innerHTML = "Code confirmed!";
+      promptBottom.innerHTML = "Please wait...";
       await new Promise(resolve => setTimeout(resolve, 1000));
       setPage(1);
     }
@@ -75,7 +79,8 @@ export default function Page0({
           Welcome to the PCE EV Charging Program
         </h1>
       </div>
-      <p id="prompt">Please enter your offer code</p>
+      <p id="prompt-top">Please enter your offer code</p>
+      <div id="prompt-bottom"></div>
       <form onSubmit={handleCodeSubmit} className={styles.form}>
         <p>
           {/* <input autocomplete="false" name="hidden" type="text" style="display:none;"> */}
