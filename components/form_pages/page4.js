@@ -128,24 +128,20 @@ export default function Page4({
 
   const handleCodeChange = async (e) => {
     let bid = document.getElementsByClassName(styles.input)[0].value;
-    let prompt = document.getElementById("prompt");
+    let inputBid = parseInt(bid);
+
     let container = document.getElementById("container");
-    let offset = (165 - bid.length * 7).toString() + "px";
+    let offset = (150 - bid.length * 7).toString() + "px";
     container.style.setProperty("--offset", offset);
 
-    let inputBid = parseInt(bid);
-    console.log(inputBid);
+    
     let input = document.getElementsByClassName(styles.input)[0];
+    let prompt = document.getElementById("prompt");
+    let button = document.getElementsByClassName(styles.button)[0];
 
-    if (inputBid < value && inputBid > prevValue) {
-      console.log("blue");
-      input.style.border = "3px solid #3a5dae";
-      prompt.innerHTML = "";
-    } else if (bid === "") {
-      console.log("NaN");
-      input.style.border = "3px solid #3a5dae";
-      prompt.innerHTML = "";
-    }
+    input.style.border = "3px solid #3a5dae";
+    prompt.innerHTML = "";
+    button.innerHTML = "Submit";
   };
   return (
     <>
@@ -160,7 +156,7 @@ export default function Page4({
               required
               autoComplete="off"
               onChange={handleCodeChange}
-              onClick={handleCodeChange}
+              // onClick={handleCodeChange}
               className={styles.input}
             />
           </p>

@@ -79,3 +79,10 @@
   justify-content: center;
   align-items: center;
 }
+
+.buttonrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 6px;
+}
