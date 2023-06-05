@@ -1,4 +1,4 @@
-import styles from "./Page3.module.css";
+import styles from "../Form.module.css";
 
 export default function Page3({
   setPage,

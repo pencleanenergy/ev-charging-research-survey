@@ -1,4 +1,4 @@
-import styles from "./Page4.module.css";
+import styles from "../Form.module.css";
 import { useState } from "react";
 
 export default function Page4({

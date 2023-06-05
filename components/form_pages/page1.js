@@ -1,4 +1,4 @@
-import styles from "./Page1.module.css";
+import styles from "../Form.module.css";
 
 export default function Page1({ setPage, monthly }) {
   const handleNext = () => {

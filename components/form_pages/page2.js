@@ -1,4 +1,4 @@
-import styles from "./Page2.module.css";
+import styles from "../Form.module.css";
 
 export default function Page2({ setPage, setValue, setBidIncrement, monthly }) {
   const handleYes = () => {
