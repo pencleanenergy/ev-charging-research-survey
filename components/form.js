@@ -5,6 +5,7 @@ import Page2 from "./form_pages/page2";
 import Page3 from "./form_pages/page3";
 import Page4 from "./form_pages/page4";
 import Page5 from "./form_pages/page5";
+import Page6 from "./form_pages/page6";
 
 export default function Form() {
   const [page, setPage] = useState(0);
@@ -79,6 +80,11 @@ export default function Form() {
       // Results page
       return (
         <Page5 value={value} bid={bid} maxBid={maxBid} binding={binding} monthly={monthly} />
+      );
+    case 6:
+      // Results page
+      return (
+        <Page6 value={value} bid={bid} maxBid={maxBid} binding={binding} monthly={monthly} />
       );
   }
 }

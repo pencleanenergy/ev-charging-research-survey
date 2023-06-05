@@ -53,6 +53,11 @@
   font-weight: 800;
 }
 
+.textbox {
+  background-color: #dcdcdc;
+  padding: 20px 20px 20px 20px;
+}
+
 .banner {
   background: #004fa6;
   width: 100%;
@@ -61,7 +66,16 @@
 }
 
 .p_container {
-  max-width: 1140px;
+  font-size: 1.2em;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

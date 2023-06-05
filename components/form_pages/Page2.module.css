@@ -25,9 +25,16 @@
 }
 
 .p_container {
-  max-width: 1140px;
+  font-size: 1.2em;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+.textbox {
+  background-color: #dcdcdc;
+  padding: 10px 10px 10px 10px;
 }
 
 .banner {

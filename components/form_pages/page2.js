@@ -12,18 +12,26 @@ export default function Page2({ setPage, setValue, setBidIncrement, monthly }) {
   };
   return (
     <>
-      <div className={styles.banner}>
-        <h1 className={styles.p_container}>
-        ***Survey Question***
-        </h1>
-      </div>
+      {/* <div className={styles.banner}>
+        <h1>***Survey Question***</h1>
+      </div> */}
       <h1></h1>
       <div className={styles.p_container}>
-        Would you be interested in enrolling in the PCE EV managed charging program
+        <div>
+          Thank you for your interest in the PCE electric vehicle charging
+          program!
+        </div>
+        <div>
+          We are now going to ask you a few questions to help us understand if we
+          are able to provide a large enough incentive for you to participate in
+          the program at this time.
+        </div>
+        <p className={styles.textbox}>
+          To start, are you interested in participating in the program for no
+          additional incentive?
+        </p>
       </div>
-      <p>
-        <b>no payment</b>?
-      </p>
+
       <div className={styles.buttonrow}>
         <button
           type="button"

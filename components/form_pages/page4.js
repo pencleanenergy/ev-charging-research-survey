@@ -13,7 +13,6 @@ export default function Page4({
   upperBound,
   monthly,
 }) {
-
   const [approved, setApproved] = useState(false);
   const [prevBid, setPrevBid] = useState(0);
 
@@ -29,7 +28,7 @@ export default function Page4({
           greater than a <b>${value}</b>{" "}
           {monthly ? "monthly payment" : "one-time payment"}.
         </p>
-        <p>
+        <p className={styles.textbox}>
           Please enter the exact minimum amount in dollars you would need as a{" "}
           {monthly ? "monthly payment" : "one-time payment"} to participate.
         </p>
@@ -46,7 +45,7 @@ export default function Page4({
           between a <b>${prevValue}</b> and <b>${value}</b>{" "}
           {monthly ? "monthly payment" : "one-time payment"}.
         </p>
-        <p>
+        <p className={styles.textbox}>
           Please enter the exact minimum amount in dollars you would need as a{" "}
           {monthly ? "monthly payment" : "one-time payment"} to participate.
         </p>
@@ -64,16 +63,12 @@ export default function Page4({
 
     input.style.border = "5px solid #3a5dae";
 
-
     const inputBid = e.target.bid.value;
-    if (inputBid > value && !upperBound && (!approved || prevBid !== inputBid)) {
-      // let result = window.confirm(
-      //   `This bid is higher than $${value}. Are you sure you want to make this bid?`
-      // );
-      // if (!result) {
-      //   setPage(4);
-      //   return;
-      // }
+    if (
+      inputBid > value &&
+      !upperBound &&
+      (!approved || prevBid !== inputBid)
+    ) {
       input.style.border = "5px solid yellow";
       prompt.innerHTML = `Your bid of <b>$${inputBid}</b> is higher than <b>$${value}</b>. <p>Are you sure you want to make this bid?</p>`;
       setPage(4);
@@ -83,13 +78,6 @@ export default function Page4({
       return;
     }
     if (inputBid < prevValue && (!approved || prevBid !== inputBid)) {
-      // let result = window.confirm(
-      //   `This bid is less than $${prevValue}. Are you sure you want to make this bid?`
-      // );
-      // if (!result) {
-      //   setPage(4);
-      //   return;
-      // }
       input.style.border = "5px solid yellow";
       prompt.innerHTML = `Your bid of <b>$${inputBid}</b> is less than <b>$${prevValue}</b>. <p>Are you sure you want to make this bid?</p>`;
       setPage(4);
@@ -100,11 +88,7 @@ export default function Page4({
     }
 
     button.style.backgroundColor = "#fff";
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    if (inputBid < maxBid) {
-      setBinding(true);
-    }
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const Data = {
       code: surveycode,
@@ -127,7 +111,12 @@ export default function Page4({
     }
 
     setBid(inputBid);
-    setPage(5);
+    if (inputBid < maxBid) {
+      setBinding(true);
+      setPage(5);
+    } else {
+      setPage(6);
+    }
   };
 
   const handleCodeChange = async (e) => {
@@ -153,28 +142,27 @@ export default function Page4({
   };
   return (
     <>
-      <div className={styles.banner}>
-        <h1 className={styles.p_container}>***Survey Question***</h1>
+      <div className={styles.contents}>
+        <div className={styles.p_container}>{prompt}</div>
+        <form onSubmit={handleBidSubmit} className={styles.form}>
+          <p id="container" className={styles.container}>
+            <input
+              type="number"
+              name="bid"
+              id="bid"
+              required
+              autoComplete="off"
+              onChange={handleCodeChange}
+              onClick={handleCodeChange}
+              className={styles.input}
+            />
+          </p>
+          <div id="prompt" className={styles.p_container}></div>
+          <button type="submit" className={styles.button}>
+            Submit
+          </button>
+        </form>
       </div>
-      <form onSubmit={handleBidSubmit} className={styles.form}>
-        {prompt}
-        <p id="container" className={styles.container}>
-          <input
-            type="number"
-            name="bid"
-            id="bid"
-            required
-            autoComplete="off"
-            onChange={handleCodeChange}
-            onClick={handleCodeChange}
-            className={styles.input}
-          />
-        </p>
-        <div id="prompt" className={styles.prompt}></div>
-        <button type="submit" className={styles.button}>
-          Submit
-        </button>
-      </form>
     </>
   );
 }
