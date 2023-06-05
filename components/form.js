@@ -79,12 +79,12 @@ export default function Form() {
     case 5:
       // Results page
       return (
-        <Page5 value={value} bid={bid} maxBid={maxBid} binding={binding} monthly={monthly} />
+        <Page5 maxBid={maxBid} monthly={monthly} />
       );
     case 6:
       // Results page
       return (
-        <Page6 value={value} bid={bid} maxBid={maxBid} binding={binding} monthly={monthly} />
+        <Page6 />
       );
   }
 }
