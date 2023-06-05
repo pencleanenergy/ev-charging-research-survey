@@ -38,16 +38,14 @@ export default function Page4({
     prompt = (
       <label htmlFor="code">
         <div>
-          Your responses indicate that you are willing to participate in the
-          program for
-        </div>{" "}
-        <p>
-          between a <b>${prevValue}</b> and <b>${value}</b>{" "}
-          {monthly ? "monthly payment" : "one-time payment"}.
-        </p>
+          Thanks for your feedback. It looks like you would be interested in
+          participating in the program for a {monthly ? "monthly" : "one-time"}{" "}
+          incentive payment of between <b>${prevValue}</b> and <b>${value}</b>.
+          We need to hone in on this a little more.
+        </div>
         <p className={styles.textbox}>
-          Please enter the exact minimum amount in dollars you would need as a{" "}
-          {monthly ? "monthly payment" : "one-time payment"} to participate.
+          Please enter the exact amount in dollars you would need to recieve as
+          a {monthly ? "monthly" : "one-time"} incentive payment to participate.
         </p>
       </label>
     );
@@ -70,7 +68,7 @@ export default function Page4({
       (!approved || prevBid !== inputBid)
     ) {
       input.style.border = "5px solid yellow";
-      prompt.innerHTML = `Your bid of <b>$${inputBid}</b> is higher than <b>$${value}</b>. <p>Are you sure you want to make this bid?</p>`;
+      prompt.innerHTML = `You previously answered that you were interested in participating for <b>$${value}</b>. <p>Are you sure you that <b>$${inputBid}</b> is the minimum incentive payment you would need to be interested?</p>`;
       setPage(4);
       setApproved(true);
       setPrevBid(inputBid);
@@ -79,7 +77,15 @@ export default function Page4({
     }
     if (inputBid < prevValue && (!approved || prevBid !== inputBid)) {
       input.style.border = "5px solid yellow";
-      prompt.innerHTML = `Your bid of <b>$${inputBid}</b> is less than <b>$${prevValue}</b>. <p>Are you sure you want to make this bid?</p>`;
+      prompt.innerHTML = `You previously answered that you were not interested in participating for <b>$${prevValue}</b>. <p>Are you sure you that <b>$${inputBid}</b> is the minimum incentive payment you would need to be interested?</p>`;
+      setPage(4);
+      setApproved(true);
+      setPrevBid(inputBid);
+      button.innerHTML = "Confirm";
+      return;
+    }
+    if (!approved || prevBid !== inputBid) {
+      prompt.innerHTML = `Are you sure you that <b>$${inputBid}</b> is the minimum incentive payment you would need to be interested? <p>Please click to confirm.</p>`;
       setPage(4);
       setApproved(true);
       setPrevBid(inputBid);
@@ -87,8 +93,9 @@ export default function Page4({
       return;
     }
 
-    button.style.backgroundColor = "#fff";
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    input.style.border = "5px solid green";
+    // button.style.backgroundColor = "#fff";
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     const Data = {
       code: surveycode,
