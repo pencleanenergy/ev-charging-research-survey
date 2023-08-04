@@ -1,4 +1,4 @@
-import styles from "./Page3.module.css";
+import styles from "../Form.module.css";
 
 export default function Page3({
   setPage,
@@ -33,32 +33,38 @@ export default function Page3({
   };
   return (
     <>
-      <div className={styles.banner}>
-        <h1 className={styles.p_container}>**Survey Question**</h1>
-      </div>
-      <div>Would you participate in the program for:</div>
-      <p>
-        a <b>${value}</b> {monthly ? "monthly payment" : "one-time payment"}?
-      </p>
-      <div className={styles.buttonrow}>
-        <button
-          type="button"
-          className={styles.button}
-          onClick={() => {
-            handleYes();
-          }}
-        >
-          Yes
-        </button>
-        <button
-          type="button"
-          className={styles.button}
-          onClick={() => {
-            handleNo();
-          }}
-        >
-          No
-        </button>
+      {/* <div className={styles.banner}>
+        <h1>**Survey Question**</h1>
+      </div> */}
+      <div className={styles.contents}>
+        <div className={styles.p_container}>
+          <div>Thank you for the feedback.</div>
+          <div>We would like to further understand you preferences.</div>
+          <p className={styles.textbox}>
+            Are you interested in participating for a <b>${value}</b>{" "}
+            {monthly ? "monthly payment" : "one-time payment"}?
+          </p>
+        </div>
+        <div className={styles.buttonrow}>
+          <button
+            type="button"
+            className={styles.button}
+            onClick={() => {
+              handleYes();
+            }}
+          >
+            Yes
+          </button>
+          <button
+            type="button"
+            className={styles.button}
+            onClick={() => {
+              handleNo();
+            }}
+          >
+            No
+          </button>
+        </div>
       </div>
     </>
   );

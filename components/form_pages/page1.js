@@ -1,40 +1,47 @@
-import styles from "./Page1.module.css";
+import styles from "../Form.module.css";
 
-export default function Page1({ setPage }) {
+export default function Page1({ setPage, monthly }) {
   const handleNext = () => {
-    setPage(15);
+    setPage(2);
   };
   return (
     <>
       <div className={styles.banner}>
         <h1 className={styles.p_container}>
-          Managed EV Charging From Pennisula Clean Energy
+          Managed EV Charging Incentive Payments
         </h1>
       </div>
-
       <p className={styles.p_container}>
-        PCE's EV Managed Charging Program will provide you with software that
-        will manage the charging of your vehicle when you are charging at home.
-        We will schedule your vehicle's home charging to avoid higher price
-        periods. You will have the ability to override the charging schedules at
-        any time.
+        PCE will make available incentive payments for participants in the
+        managed charging program. If you are enrolled in the program we will
+        provide you with a {monthly ? "monthly payment" : "one-time payment"}{" "}
+        that is determined based upon our available budget for this pilot. Your
+        survey answers <b>will not</b> influence the size of your incentive
+        payment.
       </p>
       <p className={styles.p_container}>
-        Managed EV Charging is currently a pilot program with limited
-        availability. We anticipate that this service will eventually be made
-        available to all PCE customers. This brief (no more than 3 to 5 minute)
-        survey will ask you about your willingess to participate in the PCE
-        Managed Charging Pilot.
+        The survey will ask you if you would be willing to participate in our
+        pilot for a given level of incentive payment. If you are willing to
+        participate for a payment that is less than or equal to our budgeted
+        incentive payment, you will be enrolled in the program and receive our{" "}
+        {monthly ? "monthly" : "one-time"} incentive payment. If your survey
+        indicates that you would only participate for an incentive payment that
+        is greater than our budgeted payment, you will not be enrolled in the
+        program and will not recieve any incentive payment. Again, your survey
+        answers will not influence the size of your payment. Your answers will
+        only determine whether you will be enrolled in our pilot program.
       </p>
-      <button
-        type="button"
-        className={styles.button}
-        onClick={() => {
-          handleNext();
-        }}
-      >
-        Next
-      </button>
+      <div className={styles.buttonrow}>
+        <button
+          type="button"
+          className={styles.button}
+          onClick={() => {
+            handleNext();
+          }}
+        >
+          Begin Survey
+        </button>
+      </div>
     </>
   );
 }
