@@ -8,12 +8,12 @@ export default function Page1({ setPage, monthly }) {
     <>
       <div className={styles.banner}>
         <h1 className={styles.p_container}>
-          Managed EV Charging Incentive Payments
+          Program Incentive Payments
         </h1>
       </div>
       <p className={styles.p_container}>
         PCE will make available incentive payments for participants in the
-        managed charging program. If you are enrolled in the program we will
+        EV Charging Research Project. If you are enrolled in the program we will
         provide you with a {monthly ? "monthly payment" : "one-time payment"}{" "}
         that is determined based upon our available budget for this pilot. Your
         survey answers <b>will not</b> influence the size of your incentive
