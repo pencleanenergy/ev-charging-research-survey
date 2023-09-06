@@ -76,7 +76,7 @@ export default function Page0({
     <>
       <div className={styles.banner}>
         <h1 className={styles.p_container}>
-          Welcome to the Peninsula Clean Energy EV Charging Research Project
+          Welcome to the Peninsula Clean Energy <br/> EV Charging Research Project
         </h1>
       </div>
       <p id="prompt-top">Please enter your offer code</p>

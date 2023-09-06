@@ -73,6 +73,14 @@
   text-align: center;
 }
 
+.p_instructions {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
 .contents {
   display: flex;
   flex-direction: column;
