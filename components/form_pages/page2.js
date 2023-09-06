@@ -18,8 +18,7 @@ export default function Page2({ setPage, setValue, setBidIncrement, monthly }) {
       <h1></h1>
       <div className={styles.p_container}>
         <div>
-          Thank you for your interest in the PCE electric vehicle charging
-          program!
+          Thank you for your interest in the PCE EV Charging Research Project!
         </div>
         <div>
           We are now going to ask you a few questions to help us understand if we

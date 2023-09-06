@@ -33,7 +33,7 @@ export default function Page0({
     const response = await fetch(endpoint, options);
     if (response.status == 400) {
       // alert("Code not found");
-      promptTop.innerHTML = "Oops! Code not found.";
+      promptTop.innerHTML = "Sorry. Code not found.";
       promptBottom.innerHTML = "Please verify the code you recieved and try again.";
       // input.value = "";
       input.style.border = "5px solid red";
@@ -49,13 +49,13 @@ export default function Page0({
 
     if (result.replied) {
       // alert("You have already replied to this survey");
-      promptTop.innerHTML = "Oops! It looks like you have already replied to this survey.";
+      promptTop.innerHTML = "Sorry. It looks like you have already replied to this survey.";
       promptBottom.innerHTML = "If you have not, please verify the code you recieved and try again.";
       input.style.border = "5px solid red";
       return;
     } else {
       input.style.border = "5px solid green";
-      promptTop.innerHTML = "Code confirmed!";
+      promptTop.innerHTML = "Code confirmed";
       promptBottom.innerHTML = "";
       await new Promise(resolve => setTimeout(resolve, 1000));
       setPage(1);
@@ -76,7 +76,7 @@ export default function Page0({
     <>
       <div className={styles.banner}>
         <h1 className={styles.p_container}>
-          Welcome to the PCE EV Charging Program
+          Welcome to the Peninsula Clean Energy <br/> EV Charging Research Project
         </h1>
       </div>
       <p id="prompt-top">Please enter your offer code</p>
