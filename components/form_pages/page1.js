@@ -29,7 +29,7 @@ export default function Page1({ setPage, monthly }) {
         is greater than our budgeted payment, you will not be enrolled in the
         program and will not recieve any incentive payment. Again, your survey
         answers will not influence the size of your payment. Your answers will
-        only determine whether you will be enrolled in our pilot program.
+        only determine whether you will be enrolled in our program.
       </p>
       <div className={styles.buttonrow}>
         <button

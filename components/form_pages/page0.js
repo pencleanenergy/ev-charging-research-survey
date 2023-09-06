@@ -33,7 +33,7 @@ export default function Page0({
     const response = await fetch(endpoint, options);
     if (response.status == 400) {
       // alert("Code not found");
-      promptTop.innerHTML = "Oops! Code not found.";
+      promptTop.innerHTML = "Sorry. Code not found.";
       promptBottom.innerHTML = "Please verify the code you recieved and try again.";
       // input.value = "";
       input.style.border = "5px solid red";
@@ -55,7 +55,7 @@ export default function Page0({
       return;
     } else {
       input.style.border = "5px solid green";
-      promptTop.innerHTML = "Code confirmed!";
+      promptTop.innerHTML = "Code confirmed";
       promptBottom.innerHTML = "";
       await new Promise(resolve => setTimeout(resolve, 1000));
       setPage(1);
